@@ -1,23 +1,29 @@
  function findMissingLetter(array) {
   let arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  let result;
-  // ищем с какой буквы начинать в алвафите
-  let type;
-  const startPoint = arr_en.indexOf(array[0]);
-  for (let i = 0; i < array.length; i++) {
-    // проверяем тип строчный или заглавный
-    if (array[i].toLowerCase() === array[i]) {
-      type = toUpperCase().
-    } else {
-      type = toLowerCase();
-    }
-  }
-  for (let i = 0; i < array.length; i++) {
-    if (arr_en[startPoint + i].type !==  array[i]) {
 
-      result = arr_en[startPoint + i].type ;
-    }
+  //Обьявляю переменные которые будут переопределены взависимости от обстоятельств
+  let result;
+  let type;
+  let startPoint;
+  if (array[0].toLowerCase() === array[0]) {
+     startPoint = arr_en.indexOf(array[0]);
   }
-  return result
+  else {
+     startPoint = arr_en.indexOf(array[0].toLowerCase());
+  }
+     
+  for (let i = 0; i < array.length; i++) {
+
+    // проверяем тип строчный или заглавный и взависмости от этого сравниваем
+    if (array[i].toLowerCase() !== arr_en[startPoint + i] ) {
+       result = arr_en[startPoint + i].toLowerCase()
+      if(array[i].toLowerCase()!== array[i]){
+       result = arr_en[startPoint + i].toUpperCase() ; ;
+      }}
+     
+  }
+  
+  return result;
 }
- 
+
+// и не работает
