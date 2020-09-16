@@ -1,0 +1,24 @@
+function findMissingLetter(array){
+let arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+ let result;
+ // ищем с какой буквы начинать в алвафите
+ let type;
+  const startPoint = arr_en.indexOf(array[0]);
+  for(let i =0 ; i<array.length; i++) {
+  проверяем тип строчный или заглавный 
+   if(array[i].toLowerCase() === array[i]){
+            type =toUpperCase().
+     }else {
+      type =toLowerCase();
+     }
+  }
+   for(let i =0 ; i<array.length; i++) {
+   if(arr_en[startPoint+i]!=== array[i]){
+   
+     result = arr_en[startPoint+i];
+   }
+ }
+  return result
+}
+
+ 
