@@ -1,0 +1,34 @@
+//Дано = "ZpglnRxqenU" , Надо - "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu"
+
+function accum(s) {
+	// заводим аккум
+  let totalString = "";
+  //Загоняем всё в массив причем разбитый по буквам
+  let mumbling = s.split(``);
+// проходим циклом по массиву
+  for (let i = 0; i < mumbling.length; i++) {
+  // второй аккум
+    let SubString = "";
+    // получаем элемент массива
+      for (let j = 0; j < (i + 1); j++){
+      // и третий акум
+        let letterToAdd = "";
+        // при первой итерации добавлям с большой буквы --> при следующих все маленькие в кол-ве равным значению иттератора
+        if(j === 0) {
+          letterToAdd = characters[i].toUpperCase();
+        } else {
+          letterToAdd = characters[i].toLowerCase();
+        }
+        // закидываем во второй аккум
+        SubString += letterToAdd;
+        
+      }
+      
+      totalString += SubString + "-";
+      
+  }
+  // извлечёт из последовательности элементы начиная с 0 элемента с начала и заканчивая вторым с конца.
+    totalString = totalString.slice(0, -1);
+    return totalString;
+    
+}
