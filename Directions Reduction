@@ -1,0 +1,34 @@
+ function deleteMatchingAntagonists(ar) {
+
+  let resultArr = [].concat(ar);
+
+  let oppositAntagonist = {
+    'WEST' : 'EAST',
+    'EAST' : 'WEST',
+    'SOUTH': 'NORTH',
+    'NORTH': 'SOUTH'
+  }
+  
+ for (let i = 0; i < resultArr.length; i++) {
+ let nearElement = resultArr[i+1]
+ //если текущий элемент равен своему антогонисту то 
+     while  (resultArr[i] == oppositAntagonist[nearElement]) {
+     resultArr.splice(i+1,1);
+     resultArr.splice(i,1); 
+     break;
+   }
+ } 
+  return (resultArr);     
+}
+
+function dirReduc(ar) {
+  let oldArr = [].concat(ar);
+  let newArr = deleteMatchingAntagonists(oldArr);
+  // запускаем
+  if (newArr.length == oldArr.length) 
+    return deleteMatchingAntagonists(newArr); 
+  else {
+    return dirReduc(newArr);      
+   } 
+  }
+    
