@@ -1,4 +1,4 @@
- function findMissingLetter(array) {
+  function findMissingLetter(array) {
   let arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
   //Обьявляю переменные которые будут переопределены взависимости от обстоятельств
@@ -10,20 +10,23 @@
   }
   else {
      startPoint = arr_en.indexOf(array[0].toLowerCase());
+    
   }
      
   for (let i = 0; i < array.length; i++) {
 
     // проверяем тип строчный или заглавный и взависмости от этого сравниваем
     if (array[i].toLowerCase() !== arr_en[startPoint + i] ) {
-       result = arr_en[startPoint + i].toLowerCase()
+     
+      result = arr_en[startPoint + i]
       if(array[i].toLowerCase()!== array[i]){
-       result = arr_en[startPoint + i].toUpperCase() ; ;
-      }}
+      result = arr_en[startPoint + i].toUpperCase() ; ;
+      }
+     // прибавляем к начальной точке +1
+       startPoint=startPoint+1
+     }
      
   }
   
   return result;
 }
-
-// и не работает
