@@ -1,1 +1,25 @@
+You have an array of numbers.
+Your task is to sort ascending odd numbers but even numbers must be on their places.
 
+Zero isn't an odd number and you don't need to move it. If you have an empty array, you need to return it.
+
+Example
+
+sortArray([5, 3, 2, 8, 1, 4]) == [1, 3, 2, 8, 5, 4]
+
+Решение:
+function sortArray(arr) {
+  // Return a sorted array.
+const odd = arr.filter(i => i%2 !== 0).sort();//если остаток от деления неравен 0 и сортируем полученый массив 
+let i = 0, // обьявляем тут счетчик
+let result = [];
+arr.forEach(e => {
+  if (e%2 === 0) {  // если четное то пушим в результирующий массив
+    result.push(e)
+  } else {
+    result.push(odd[i]);
+    i++; увеличиваем счетчик на один
+  }
+});
+  return result;
+}
