@@ -1,18 +1,12 @@
 // complete the function
 function solution(string) {
-  
-   const array = string.split("") // загоняю всё в массив
+    const array = string.split("") // загоняю всё в массив
    let result =[] 
    for (let i = 0; i < array.length; i++) {
-    if (array[i].toLowerCase() === array[i]) {
-      result.push(array[i]) //если с маленькой буквы то просто закидываю в массив
+    if (array[i].toUpperCase() === array[i]) {
+      result.push(" ") // если с большой буквы то закидываю пробел
   }
-    if (array[i].toLowerCase() !== array[i]) {
-      let correct = " " + array[i] // если с большой то перед ней ставлю пробел и закидываю в массив
-      result.push(correct)
-        }
+    result.push(array[i]);
   }
-     console.log(result.join(""))
-      return result.join("")
-   
+        return result.join("")
 }
